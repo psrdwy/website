@@ -36,6 +36,6 @@ a slow HRF that convolutes the trials within a block, you can shuffle the
 blocks but not the individual trials in a block.
 
 The "Control variable" allows you to specify blocks within which the permutation should
-be done, while controlling that repetitions are not permuted _between_ different control blocks. Specifying a control variable is an excellent way to control for a potentially confounding variable that associated with your independent variable.
+be done, while controlling that repetitions are not permuted _between_ different control blocks. Specifying a control variable is an excellent way to control for a potentially confounding variable that associated with your independent variable.  Permutations are limited by the number of non-unique cvar observations (e.g., repetition of cvar values within a block), so if there are many unique cvar values, using this option will lead to many repetitions of permutation indices, resulting in permutation distributions that trend towards being homogeneous/degenerate or that feature many repeated observations at specific points.  This can seriously distort p-values, so this option should only be used if there are blocks of non-unique values that should be permuted separately.
 
 If you want to understand in detail what the consequences are of specifying these options, I suggest you do "cd fieldtrip/private" and "edit resampledesign". That is the low-level function used for the permutations and other resamplings.
